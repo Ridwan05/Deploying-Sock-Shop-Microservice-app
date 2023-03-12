@@ -1,3 +1,3 @@
 region = "us-east-1"
-label  = "SockShop"
+label  = "MSockShop"
 app    = "terraformapp"
