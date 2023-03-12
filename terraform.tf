@@ -1,12 +1,14 @@
 
 terraform {
 
-  cloud {
-    organization = "ridTraining"
-    workspaces {
-      name = "SockShop"
-    }
-  }
+  cloud {}
+
+  # cloud {
+  #   organization = "ridTraining"
+  #   workspaces {
+  #     name = "SockShop"
+  #   }
+  # }
 
   required_providers {
     aws = {
