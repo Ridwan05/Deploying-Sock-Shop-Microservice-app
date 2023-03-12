@@ -2,6 +2,7 @@
 terraform {
 
   cloud {
+    organization = "ridTraining"
     workspaces {
       name = "SockShop"
     }
