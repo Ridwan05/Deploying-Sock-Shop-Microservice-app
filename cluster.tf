@@ -7,20 +7,13 @@ data "aws_availability_zones" "available" {}
 locals {
   cluster_name = "MySockShop"
 }
-# locals {
-#   cluster_name = "MySockShop-eks-${random_string.suffix.result}"
-# }
 
-# resource "random_string" "suffix" {
-#   length  = 8
-#   special = false
-# }
-
+# VPC-------
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "3.19.0"
 
-  name = "MySockShop"
+  name = "mycluster"
 
   cidr = "10.0.0.0/16"
   azs  = slice(data.aws_availability_zones.available.names, 0, 2)
@@ -43,6 +36,7 @@ module "vpc" {
   }
 }
 
+# Cluster-------
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
   version = "19.5.1"
@@ -60,26 +54,21 @@ module "eks" {
   }
 
   eks_managed_node_groups = {
-    MySockShop = {
-      name = "node-group"
+    mycluster = {
+      name = "mynodes"
 
-      instance_types = ["t3.small"]
+      instance_types = ["m5.large"]
 
       min_size     = 2
       max_size     = 3
       desired_size = 2
     }
 
-    # two = {
-    #   name = "node-group-2"
-
-    #   instance_types = ["t3.small"]
-
-    #   min_size     = 1
-    #   max_size     = 2
-    #   desired_size = 1
-    # }
   }
+
+  # provisioner "local-exec" {
+  #   command = "aws eks --region var.region update-kubeconfig --name module.eks.cluster_name"
+  # }
 }
     
 
@@ -109,10 +98,3 @@ resource "aws_eks_addon" "ebs-csi" {
     "terraform" = "true"
   }
 }
-
-# data "aws_eks_cluster" "cluster" {
-#   name = module.eks.cluster_id
-# }
-# data "aws_eks_cluster_auth" "cluster" {
-#   name = module.eks.cluster_id
-# }
