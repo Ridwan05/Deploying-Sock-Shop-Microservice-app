@@ -98,3 +98,10 @@ resource "aws_eks_addon" "ebs-csi" {
     "terraform" = "true"
   }
 }
+
+resource "aws_route53_zone" "myzone" {
+  name = var.domain
+  tags = {
+    "Name" = "myzone"
+  }
+}
