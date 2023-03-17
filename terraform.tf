@@ -1,12 +1,12 @@
 
 terraform {
 
-  cloud {}
+  # cloud {}
 
   cloud {
     organization = "ridTraining"
     workspaces {
-      name = "SockShop"
+      name = "FinalExam"
     }
   }
 
