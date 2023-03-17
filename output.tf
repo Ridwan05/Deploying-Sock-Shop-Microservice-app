@@ -17,3 +17,9 @@ output "cluster_name" {
   description = "Kubernetes Cluster Name"
   value       = module.eks.cluster_name
 }
+
+output "route53" {
+  description = "myzone ID"
+  value = aws_route53_zone.myzone.zone_id
+  
+}
