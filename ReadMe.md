@@ -18,15 +18,15 @@
 5. Prepare terraform files and circleci config file in IaaS brach to provision eks cluster and Route53 hosted zone. This is done according to the instruction here [] (https://developer.hashicorp.com/terraform/tutorials/automation/circle-ci) and here [] (https://developer.hashicorp.com/terraform/tutorials/kubernetes/eks)
 6. Commit all changes to IaaS branch, this will triger deployment on circleci  
 
-  ![circleci] (asset/circleci.png)
+  ![circleci](asset/circleci.png)
 
 7. Get terraform output from terraformcloud  
   
-  ![terraformCloud] (asset/terraformCloud.png)
+  ![terraformCloud](asset/terraformCloud.png)
 
 8. update the context of kubeconfig by running  
     
-    ~aws eks --region your-region update-kubeconfig --name clustername~ 
+    _aws eks --region your-region update-kubeconfig --name clustername_ 
 
 9. cd to sock-shop dir. Adjust the frontend service to use loadbalancer rather than Nodeport in the original sock-shop documentaion.
 
@@ -86,7 +86,7 @@ spec:
     - [prometheus](prometheus.ridwandemo.me)
     - [grafana](grafana.ridwandemo.me)
 
-sock-shop a6a6803f2fca045f8be8d805c9a121eb-1639442620.us-east-1.elb.amazonaws.com  1
-webapp a5877883ff5cb404a82fb5eb9a5e50a2-1267176436.us-east-1.elb.amazonaws.com 0
-prometheus a6c2a1db862214cd1b4c3ebea879dd42-1286728352.us-east-1.elb.amazonaws.com  2
+sock-shop a6a6803f2fca045f8be8d805c9a121eb-1639442620.us-east-1.elb.amazonaws.com  1  
+webapp a5877883ff5cb404a82fb5eb9a5e50a2-1267176436.us-east-1.elb.amazonaws.com 0  
+prometheus a6c2a1db862214cd1b4c3ebea879dd42-1286728352.us-east-1.elb.amazonaws.com  2  
 grafana aa7f3945b08dc491ea8f8d1fd482b96c-1461062469.us-east-1.elb.amazonaws.com  3
