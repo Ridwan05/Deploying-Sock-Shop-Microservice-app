@@ -89,7 +89,7 @@ spec:
     - webapp.ridwandemo.me
     - sock-shop.ridwandemo.me
     - prometheus.ridwandemo.me
-    - grafana.ridwandemo.me
+    - grafana.ridwandemo.me (login=admin password=admin) 
 
 15. Cleanup resources.
 
