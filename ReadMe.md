@@ -54,31 +54,36 @@ spec:
   - cd to manifest-monitoring, adjust both promethues and grafana services to use loadbalancer type as well
 
   - Run the following command in the sock-shop directory to deploy the app and prometheus.  
-            ```
-                kubectl apply -f sock-shop.yml
+           
+                kubectl apply -f sock-shop.yml  
                 kubectl create -f manifests-monitoring
-            ```
+ 
 10. cd to webapp dir. and run the following command to deploy the mongo app  
-            ```
-                kubectl apply secret.yml
+
+                kubectl apply secret.yml  
                 kubectl apply -f mongo.yml
-            ```
+   
   - Download helm charts and install mongodb-exporter
-            ```
-                helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+            
+                helm repo add prometheus-community https://prometheus-community.github.io/helm-charts  
                 helm install mongodb-exporter  prometheus-community/prometheus-mongodb-exporter -f values.yml -n monitoring
-            ```
-11. Get the servicse by running ~kubectl get services --all-namespaces~
+
+11. Get the servicse by running _kubectl get services --all-namespaces_
     - Three namespaces are created in the deployment
        - sock-shop
        - webapp
        - monitoring
 
 12. Get external IP (loadbalancer arn) of sock-shop, webapp, prometheus and grafana.
+    - Endpoints
+       - sock-shop >> a6a6803f2fca045f8be8d805c9a121eb-1639442620.us-east-1.elb.amazonaws.com
+       - webapp >> a5877883ff5cb404a82fb5eb9a5e50a2-1267176436.us-east-1.elb.amazonaws.com
+       - prometheus >> a6c2a1db862214cd1b4c3ebea879dd42-1286728352.us-east-1.elb.amazonaws.com
+       - grafana >> aa7f3945b08dc491ea8f8d1fd482b96c-1461062469.us-east-1.elb.amazonaws.com
 
 13. cd to A_records
     - create terraform files to create A-records for the endpoints
-    - do ~terraform plan~ then ~terraform apply~
+    - do _terraform plan_ then _terraform apply_
 
 14. Apps and monitoring tools can be reach at
     - [webapp](webapp.ridwandemo.me)
@@ -86,7 +91,5 @@ spec:
     - [prometheus](prometheus.ridwandemo.me)
     - [grafana](grafana.ridwandemo.me)
 
-sock-shop a6a6803f2fca045f8be8d805c9a121eb-1639442620.us-east-1.elb.amazonaws.com  1  
-webapp a5877883ff5cb404a82fb5eb9a5e50a2-1267176436.us-east-1.elb.amazonaws.com 0  
-prometheus a6c2a1db862214cd1b4c3ebea879dd42-1286728352.us-east-1.elb.amazonaws.com  2  
-grafana aa7f3945b08dc491ea8f8d1fd482b96c-1461062469.us-east-1.elb.amazonaws.com  3
+15. Cleanup resources.
+
