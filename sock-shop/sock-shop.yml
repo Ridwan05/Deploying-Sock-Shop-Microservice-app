@@ -317,15 +317,6 @@ spec:
   - protocol: TCP
     port: 80
     targetPort: 8079
-
-# spec:
-#   type: NodePort
-#   ports:
-#   - port: 80
-#     targetPort: 8079
-#     nodePort: 30001
-#   selector:
-#     name: front-end
 ---
 apiVersion: apps/v1
 kind: Deployment
