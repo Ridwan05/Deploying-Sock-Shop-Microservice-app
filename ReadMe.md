@@ -86,10 +86,10 @@ spec:
     - do _terraform plan_ then _terraform apply_
 
 14. Apps and monitoring tools can be reach at
-    - [webapp](webapp.ridwandemo.me)
-    - [sock-shop](sock-shop.ridwandemo.me)
-    - [prometheus](prometheus.ridwandemo.me)
-    - [grafana](grafana.ridwandemo.me)
+    - webapp.ridwandemo.me
+    - sock-shop.ridwandemo.me
+    - prometheus.ridwandemo.me
+    - grafana.ridwandemo.me
 
 15. Cleanup resources.
 
