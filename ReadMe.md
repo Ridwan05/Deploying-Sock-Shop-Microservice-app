@@ -15,7 +15,7 @@
 2. Craete workspace with the same name as the git repo on TerraformCloud.
 3. Create a new project tracking the IaaS brach on Circleci
 4. Set all neccessary environment variables in circleci
-5. Prepare terraform files and circleci config file in IaaS brach to provision eks cluster and Route53 hosted zone. This is done according to the instruction here [] (https://developer.hashicorp.com/terraform/tutorials/automation/circle-ci) and here [] (https://developer.hashicorp.com/terraform/tutorials/kubernetes/eks)
+5. Prepare terraform files and circleci config file in IaaS brach to provision eks cluster and Route53 hosted zone. This is done according to the instruction [here](https://developer.hashicorp.com/terraform/tutorials/automation/circle-ci) and [here](https://developer.hashicorp.com/terraform/tutorials/kubernetes/eks)
 6. Commit all changes to IaaS branch, this will triger deployment on circleci  
 
   ![circleci](asset/circleci.png)
