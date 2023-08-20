@@ -1,13 +1,18 @@
 # In this project, I deployed the popular sock-shop microservice-app and a webapp.
 ## Project Tasks
-- Provision AWS EKS and other resources with terraform
+- Create CI/CD pipeline with circleci and terrformcloud
+- Prepare terraform files to provision AWS EKS and other resources
 - Deploy the "sock-shop microservice app" to EKS
 - Deploy a webapp (mongodb and mongo-express) to EKS.
-- Set up prometheus monitoring for both app
+- Set up prometheus monitoring and grafana for both apps
 
-## Requirements
+## Prerequisites
 - AWS Account
+- VsCode with AWS credentials configured
+- Kubernetes.
 - TerraformCloud Account
+- sock-shop microsevice-app source code
+- webapp source code
 - CircleCi Account
 - Github Account
 
