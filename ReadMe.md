@@ -1,7 +1,8 @@
-# This is my 3rd semester project in AltSchool
-## Project Task
-- Deploy the "sock-shop microservice app"
-- Deploy a webapp (mongodb and mongo-express).
+# In this project, I deployed the popular sock-shop microservice-app and a webapp.
+## Project Tasks
+- Provision AWS EKS and other resources with terraform
+- Deploy the "sock-shop microservice app" to EKS
+- Deploy a webapp (mongodb and mongo-express) to EKS.
 - Set up prometheus monitoring for both app
 
 ## Requirements
